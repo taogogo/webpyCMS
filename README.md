@@ -3,6 +3,8 @@ webpyCMS0.1
 
 webpyCMS is a fastest and smallest CMS base on web.py
 
+keywords:webpycms,webpy cms,web.py cms,web.py blog,webpy blog
+
 
 webpyCMS是基于web.py的网站内容管理系统，小巧实用，非常适合做博客和个人简历网站。
 
