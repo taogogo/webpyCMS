@@ -1,0 +1,19 @@
+$def with (tplData)
+$:tplData['render'].header(tplData)
+<div class="alertBox">
+    <a href="javascript:location.href=' $:tplData['jump']['url'] ';">$:tplData['jump']['msg'] (<font id="percent">$:tplData['jump']['timeout']</font>秒后跳转，点击马上跳转）</a></div>
+
+<script language="javascript">
+    var bar=$:tplData['jump']['timeout'] ;
+    function count(){
+        bar=bar-1 ;
+        document.getElementById("percent").innerHTML=bar;
+        if (bar>0){
+            setTimeout("count()",1000);
+        }else{
+            location.href="$:tplData['jump']['url']";
+        }
+    }
+    count() ;
+</script>
+$:tplData['render'].footer(tplData)

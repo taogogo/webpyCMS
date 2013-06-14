@@ -1,0 +1,26 @@
+$def with (tplData)
+$:tplData['render'].header()
+    <h2>文章管理 <a href="$makeUrl('cms','add',{})">添加</a></h2>
+<table width="800" border="0" cellspacing="0" cellpadding="1" class="list">
+    <tr>
+        <th>ID</th>
+        <th>标题</th>
+        <th>状态</th>
+        <th>排序</th>
+        <th>管理</th>
+    </tr>
+$for i in tplData['cmsList']:
+    <tr> <td>$:i['id'] </td> <td>$:i['name']</td><td>$:tplData['statusList'][i['status']]</td>
+        <td>$:i['orders']</td>
+        <td>
+            <a href="$makeUrl('index','show',{'id':i['id']})" >查看</a>
+             |
+            <a href="$makeUrl('cms','edit',{'id':i['id']})" >编辑</a>
+            | <a href="$makeUrl('cms','delete',{'id':i['id']})" onclick="return confirm('确认删除？')">删除</a>
+        </td>
+    </tr>
+</table>
+<nav class="navigation">
+    $:tplData['pageString']
+</nav>
+$:tplData['render'].footer()

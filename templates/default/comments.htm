@@ -1,0 +1,40 @@
+$def with (tplData)
+<article id="comments">
+<h3>$:tplData['atl']['commentCount'] 条评论</h3>
+<ol class="comment_list">
+$for i in tplData['commentList']:
+    <li class="comment even thread-even depth-1" id="li-comment-$:i['id']">
+        <div id="comment-$:i['id']">
+        <span class="comment_avatar">
+            <a href="#" target="_blank" rel="nofollow">
+                <img alt="" src="/static/default/default_user.jpg" class="avatar photo" height="28" width="28" />
+            </a>
+        </span>
+        <cite class="fn">$:i['name']</cite>
+        <span class="comment_time">@ $:i['createTime']</span>
+        <div class="comment_text"><p>$:i['content']</p></div>
+        <div class="reply">
+            <a href="#commentarea" onclick="return backcomment('$:i['name']\n');">回复</a>
+        </div>
+    </div>
+    </li>
+
+</ol>
+<div id="respond">
+<h3 id="reply-title">发表评论 </h3>
+<form action="/index/comment" method="post" id="commentform">
+<p class="comment-notes">电子邮箱地址不会被公开。 必填项已用 <span class="required">*</span> 标注</p>
+<p class="comment-form-author"><label for="author">姓名 <span class="required">*</span></label>
+<input id="author" name="name" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-email"><label for="email">电子邮箱 <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-comment"><label for="comment">评论</label><textarea id="content" name="content" cols="45" rows="8" aria-required="true"></textarea></p>                          <p class="form-submit">
+
+<input type="hidden" name="cmsId" id="cmsId" value="$:tplData['atl']['id']" />
+<input type="hidden" name="ctrl" id="ctrl" value="save" />
+<input type="hidden" name="action" id="action" value="comment" />
+<input name="submit" type="submit" id="submit" value="发表评论" />
+
+</p>
+</form>
+</div><!-- #respond -->
+</article>

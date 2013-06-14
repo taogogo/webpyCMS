@@ -1,0 +1,8 @@
+$def with (tplData)
+$:tplData['render'].header()
+欢迎你<hr />
+你的IP:$:tplData['info']['clientIp']<hr />
+服务器IP:$:tplData['info']['serverIp']<hr />
+UA:$:tplData['info']['ua']<hr />
+当前时间:$:tplData['info']['date']<hr />
+$:tplData['render'].footer()

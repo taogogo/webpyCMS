@@ -1,0 +1,16 @@
+$def with (tplData)
+$:tplData['render'].header(tplData)
+
+<div id="content">
+<article class="post-$:tplData['atl']['id'] post type-post status-publish format-standard hentry category-$:tplData['atl']['id'] tag-appreciate">
+
+<h1>$:tplData['atl']['name']</h1>
+<small class="meta">$:tplData['atl']['createTime']</small>
+$:tplData['atl']['content']
+
+<small class="meta"> 查看：$:tplData['atl']['views']</small>
+</article>
+
+    $:tplData['render'].comments(tplData)
+</div>
+$:tplData['render'].footer(tplData)

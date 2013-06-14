@@ -1,0 +1,52 @@
+/*author:TaoGOGO
+blog:www.taogogo.info
+email:love@taogogo.info
+*/
+*{margin:0; padding:0;}
+small,cite{ text-decoration:none;}
+body{font:13px/160% "",Arial,sans-serif; font-size:14px; }
+h1 {font-size:140%;}
+h2{ font-size:130%; margin-bottom:10px;}
+h3 {font-size:120%; border-bottom:1px solid #D2D2D2; padding:5px 0;}
+ul,li{ list-style-type:none;}
+img { border:none; vertical-align:top;}
+strong{font-weight:normal;}
+a{ margin:0; padding:0; color:#283347;text-decoration:none;}
+a:hover{ color:#BD0800; text-decoration:underline; }
+#logo{ background:url(images/logo.gif); }
+/*common*/
+blockquote{ margin:15px auto 15px 20px; padding-left:15px; background:#f6f6f6; border-left:1px solid #91b24f}
+code, .code { font: 100% "Courier New", Courier, monospace;	color: #000000;	background: #FAFDE1;margin: 5px 10px;padding: 10px;display:block;border: 1px dashed #818141;}
+.alert{ color:#FF0000;}
+.clear{ clear:both;}
+.corner{  -moz-border-radius: 4px;-khtml-border-radius: 4px;-webkit-border-radius: 4px;border-radius: 4px;}
+.floatLeft{ float:left;}
+.floatRight{ float:right;}
+.disNone{ display:none;}
+#bodyDiv{ width:810px;margin:1px auto;border: 1px gray solid;padding: 1px 2px;}
+a{text-decoration: none;border-bottom:1px dotted gray;}
+#nav{margin:2px auto;}
+#nav a{float: left;display: inline; padding:10px 20px;margin: 0px 1px;}
+#nav a:hover{color: #fff;background:#000;}
+.addtable a,.list a{ border-bottom:1px dotted #999999;}
+.addtable a:hover,.list a:hover{ border-bottom:none;}
+.addtable{  border:#999999 1px solid;}
+.addtable th,.list th{word-break: keep-all;white-space:nowrap;}
+.addtable td,.list td{border-bottom:#999999 1px solid; padding:2px 4px;word-break: keep-all;white-space:nowrap;}
+.list td{border-left:#999999 1px solid; padding:2px 4px;}
+.list{ clear:both;border-right:#999999 1px solid;border-top:#999999 1px solid;float:left; margin:1px 0px;}
+.list th{border-left:#999999 1px solid;border-bottom:#999999 1px solid; height:23px; background:url(mainnavbg.gif) 0px -84px;}
+.addtable input{ width:400px; border:#333333 1px solid;  height:22px; line-height:22px; font-size:14px;}
+.addtable .sinput{ width:100px; border:#333333 1px solid; height:22px; line-height:22px; font-size:14px;}
+.addtable textarea{ width:400px; border:#333333 1px solid; height:100px; font-size:14px;}
+.normaltable{ border:#999999 1px solid;}
+.normaltable td,.list td{border-bottom:#999999 1px solid; padding:2px 4px;}
+.normaltable input{ width:60%; border:#333333 1px solid; height:22px; line-height:22px; font-size:14px;}
+.normaltable .sex input{width:auto;}
+.normaltable textarea{width:60%;  border:#333333 1px solid; height:100px; font-size:14px;}
+.uploadbtn{ padding:2px 8px; margin:4px 12px; font-size:16px; background:#666666; color:#FFFFFF;border:#999999 1px solid;}
+.uploadbtn:hover{ color:#FFFFFF; background:#999999; border:#666666 1px solid; text-decoration:none;}
+#submits{ width:100px; height:26px; cursor:pointer; font-weight:bold;border-radius:2px;}
+#submits{ width:100px; height:26px;cursor:pointer; font-weight:bold;border-radius:2px;}
+#submits:hover{ border:#66C5FF 1px solid; color:#0055CC;}
+#allowcmt{ width:50px; border:none;}

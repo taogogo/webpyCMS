@@ -1,0 +1,43 @@
+$def with (tplData)
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head profile="http://gmpg.org/xfn/11">
+    <meta charset="UTF-8" />
+    <title>$:tplData['webTitle']</title>
+    <link rel="stylesheet" href="$makeUrl('static','default/style.css')" />
+    <link rel="alternate" type="application/rss+xml" title=" RSS Feed" href="$makeUrl('rss')" />
+    <script type="text/javascript" src="$makeUrl('static','default/bin.js')"></script>
+    <link rel="shortcut icon" href="$makeUrl('static','default/favicon.ico')">
+    <!--[if IE]>
+    <script src="$makeUrl('static','default/html5.js')"></script>
+    <![endif]-->
+    <meta name="description" content="$:tplData['webDescription']" />
+</head>
+
+<body>
+<header id="header">
+    <hgroup>
+        <h1 id="logo"><a href="/">$:tplData['webTitle']</a></h1>
+        <h2>$:tplData['webDescription']</h2>
+    </hgroup>
+</header>
+<div id="wrap">
+    <nav id="menu"><ul id="menu-header" class="nav">
+    <li id="menu-item-0" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-0">
+        <a href="$makeUrl('index')">首页</a>
+    </li>
+    <li id="menu-item-1" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1">
+        <a title="管理" href="$makeUrl('admin')">管理</a>
+    </li>
+
+    </ul></nav>
+    <div id="toolbar">
+        <div id="rss"><a href="$makeUrl('rss')" title="RSS Feed">RSS</a></div>
+        <form id="searchform" method="get" action="https://www.google.com/search?">
+ <input  type="hidden" value="" name="q" id="searchText" /> 
+ 
+            <input type="text" value="" name="s" id="s" size="30" placeholder="Search" autocomplete="off" required onkeyup="
+document.getElementById('searchText').value=this.value + ' site:baidu.com'" />
+            <button type="submit">Search</button>
+        </form>
+    </div>

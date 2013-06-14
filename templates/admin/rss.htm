@@ -1,0 +1,18 @@
+$def with (tplData)
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:blogChannel="http://backend.userland.com/blogChannelModule">
+    <channel>
+    <title>$:tplData['webTitle']</title>
+    <link>$:tplData['webUrl']</link>
+    <description>$:tplData['webDescription']</description>
+        $for i in tplData['cmsList']:
+            <item>
+                <title>$:i['name']</title>
+                <description>
+                    <![CDATA[  $:i['content'] ]]>
+                </description>
+                <pubDate>$:i['createTime']</pubDate>
+                <guid>$makeUrl('index','show',{'id':i['id']})</guid>
+            </item>
+</channel>
+</rss>

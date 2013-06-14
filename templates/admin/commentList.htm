@@ -1,0 +1,25 @@
+$def with (tplData)
+$:tplData['render'].header()
+    <h2>评论管理</h2>
+<table width="800" border="0" cellspacing="0" cellpadding="1" class="list">
+    <tr>
+        <th  >ID</th>
+        <th>评论者</th>
+        <th>评论内容</th>
+        <th>评论IP</th>
+        <th>邮箱</th>
+        <th>文章</th>
+        <th>管理</th>
+    </tr>
+$for i in tplData['commentList']:
+    <tr> <td>$:i['id'] </td> <td>$:i['name']</td><td>$:i['content']</td>
+        <td>$:i['ip']</td><td>$:i['email']</td>
+
+        <td><a href="$makeUrl('index','show',{'id':i['cmsId']})" target="_blank">$:i['atl']['name']</a></td>
+        <td><a href="$makeUrl('comment','delete',{'id':i['id']})" onclick="return confirm('确认删除？')">删除</a></td>
+    </tr>
+</table>
+<nav class="navigation">
+    $:tplData['pageString']
+</nav>
+$:tplData['render'].footer()

@@ -1,0 +1,57 @@
+$def with (tplData)
+$:tplData['render'].header()
+<form action="$makeUrl('cms','save')" method="post">
+    <table width="750" border="0" cellspacing="0" cellpadding="1" class="addtable">
+        <tr>
+            <td width="100" scope="col">标题:</td>
+            <td width="608" scope="col"><input name="name" type="text" id="name" value="" /></td>
+        </tr>
+        <tr>
+            <td colspan="2" scope="col">
+                <textarea rows="10" cols="5" name="content" id="content"></textarea>
+    <script type="text/javascript" src="$makeUrl('static','admin/editor/tinyeditor.js')"></script>
+    <link rel="stylesheet" href="$makeUrl('static','admin/editor/style.css')" />
+    <script type="text/javascript">
+        var instance=new TINY.editor.edit('editor',{
+            id:'content',
+            width:740,
+            height:175,
+            cssclass:'contentls',
+            controlclass:'tecontrol',
+            rowclass:'teheader',
+            dividerclass:'tedivider',
+            controls:['bold','italic','underline','strikethrough','|','subscript','superscript','|', 'orderedlist','unorderedlist','|','outdent','indent','|','leftalign',
+                'centeralign','rightalign','blockjustify','|','unformat','|','undo','redo','print','n',
+                'font','size','style','forecolor','backcolor','|','image','swf','media','upload','|','hr','link','unlink','|','cut','copy','paste'],
+            footer:true,
+            fonts:['楷体','宋体','黑体','Verdana','Arial','Georgia'],
+            xhtml:true,
+            uploadexc:"$makeUrl('upload','index',{})",
+            bodyid:'editor',
+            footerclass:'tefooter',
+            toggle:{text:'源码',activetext:'视图',cssclass:'toggle'},
+            resize:{cssclass:'resize'}
+        });
+    </script>
+            </td>
+        </tr>
+        <tr>
+            <td width="100" scope="col">排序:</td>
+            <td width="608" scope="col"><input name="orders" type="text" id="orders" value="0" /></td>
+        </tr>
+        <tr>
+            <td scope="col">状态:</td>
+            <td scope="col">
+                <SELECT  name="status" id="status">
+                $for k,v in tplData['statusList'].items():
+                    <option value="$:k"
+                    $if k == 1:
+                        selected="selected"
+                    >$:v</option>
+            </SELECT>
+        </tr>
+        <tr>
+            <td colspan="2" scope="col"><input type="submit" name="submit" value="保存" id="submits" onmouseover="instance.post();" /></td>
+        </tr>
+</form>
+$:tplData['render'].footer()
