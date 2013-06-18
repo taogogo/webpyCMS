@@ -23,7 +23,8 @@ class index(baseAction):
         self.assign('cmsList',cmsList)
         pageString = self.getPageStr(self.makeUrl('index','index'),page,count,totalCount)
         self.assign('pageString',pageString)
-        commentList = model.comment().getList('*',{'status':1},'id desc',str(offset)+','+str(count))
+        commentObj=model.comment()
+        commentList = commentObj.getList('*',{'status':1},'id desc',str(offset)+','+str(count))
         self.assign('commentList',commentList)
 
         return self.display('index')
